@@ -227,7 +227,7 @@ ol.process-chart > li:nth-of-type(6n+6):after {
     }
 
       /*** N=6 ***/
-    ol.process-chart > li:nth-of-type(6n+5):after {
+    ol.process-chart > li:nth-of-type(6n+6):after {
         border-top-color: #77BD43;
     }
   
