@@ -7,6 +7,7 @@
     <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   </head>
   <body>
 <!-- Title Section -->
@@ -29,6 +30,7 @@
         <div class="mui-row mui--align-middle">
           <div class="mui-col-md-4">
             <button onclick="window.location.href='https://helpmencri.org/HELP';" class="mui-btn mui-btn--primary mui-col-md-12 mui-btn--raised">helpmencri.org/HELP</button>
+            <button onclick="CopyToClipboard('https://helpmencri.org/HELP'); "><i class='fas fa-copy'></i></button>
           </div>
           <div class="mui-col-md-8">
             <br>
@@ -328,5 +330,10 @@
         
       </div>
     </div>
+    <script>
+        function CopyToClipboard(parameter) {
+          navigator.clipboard.writeText(parameter);
+        } 
+    </script>
   </body>
 </html>
