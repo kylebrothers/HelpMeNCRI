@@ -1,14 +1,19 @@
 - title: "We receive final protocol from the sponsor"
+  background_color: "#EB1946"
 
 - title: "Feasibility team reviews project and hands off for start-up"
   timeline: "14 weeks"
+  background_color: "#00A6CE"
 
 - title: "Budget negotiation"
   timeline: "8 weeks"
   note: "The timeline at this stage varies greatly depending on sponsor responsiveness."
+  background_color: "#F7971E"
 
 - title: "NRI Legal Review"
   timeline: "8 weeks"
   note: "The timeline at this stage varies greatly depending on sponsor responsiveness."
+  background_color: "#006dcc"
 
 - title: "NRI Approval"
+  background_color: "#FDC800"
