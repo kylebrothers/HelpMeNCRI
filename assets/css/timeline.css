@@ -47,6 +47,7 @@ ol.process-chart {
     list-style: none;
     margin: 0 0 0 1em;
     padding: 0;
+    overflow: hidden; /* Added to prevent subpixel gaps */
 }
 
 ol.process-chart > li,
@@ -108,7 +109,7 @@ ol.process-chart > li > div:before {
 }
 
 /*** MEDIA QUERIES ***/
-@media only screen and ( max-width: 40em ) {
+@media only screen and (max-width: 40em) {
 
     ol.process-chart {
         margin: 1em 0 0 0;
@@ -138,6 +139,9 @@ ol.process-chart > li > div:before {
         right: inherit;
         top: inherit;
         width: 100%;
+        /* Fix the gap */
+        transform: translateY(-1px); /* Move up by 1 pixel */
+        box-shadow: 0 -1px 0 0; /* Cover the gap */
     }
 
     ol.process-chart > li > div {
