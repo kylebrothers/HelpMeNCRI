@@ -141,7 +141,6 @@ ol.process-chart > li > div:before {
         width: 100%;
         /* Fix the gap */
         transform: translateY(-1px); /* Move up by 1 pixel */
-        box-shadow: 0 -1px 0 0; /* Cover the gap */
     }
 
     ol.process-chart > li > div {
