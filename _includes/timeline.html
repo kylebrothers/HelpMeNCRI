@@ -1,0 +1,20 @@
+<h2>{{ include.title }}</h2>
+
+<ol class="process-chart">
+  {% for item in include.items %}
+    <li>
+      <div>
+        <h2>{{ item.title }}</h2>
+        {% if item.description %}
+          <p>{{ item.description }}</p>
+        {% endif %}
+        {% if item.timeline %}
+          <p>Typical timeline: <strong><nobr>{{ item.timeline }}</nobr></strong></p>
+        {% endif %}
+        {% if item.note %}
+          <p>{{ item.note }}</p>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ol>
