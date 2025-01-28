@@ -18,11 +18,8 @@
       <style>
         ol.process-chart > li:nth-child({{ forloop.index }}):after {
           border-left-color: {{ item.background_color }};
-        }
-        @media only screen and (max-width: 40em) {
-          ol.process-chart > li:nth-child({{ forloop.index }}):after {
-            border-top-color: {{ item.background_color }};
-          }
+          border-top-color: {{ item.background_color }};
+          box-shadow: 0 -1px 0 0 {{ item.background_color }}; /* Match the background color */
         }
       </style>
     </li>
