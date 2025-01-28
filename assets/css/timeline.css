@@ -140,7 +140,7 @@ ol.process-chart > li > div:before {
         top: inherit;
         width: 100%;
         /* Fix the gap */
-        transform: translateY(-1px); /* Move up by 1 pixel */
+        transform: translateY(1px); /* Move up by 1 pixel */
     }
 
     ol.process-chart > li > div {
