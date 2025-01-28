@@ -15,6 +15,16 @@
           <p>{{ item.note }}</p>
         {% endif %}
       </div>
+      <style>
+        ol.process-chart > li:nth-child({{ forloop.index }}):after {
+          border-left-color: {{ item.background_color }};
+        }
+        @media only screen and (max-width: 40em) {
+          ol.process-chart > li:nth-child({{ forloop.index }}):after {
+            border-top-color: {{ item.background_color }};
+          }
+        }
+      </style>
     </li>
   {% endfor %}
 </ol>
