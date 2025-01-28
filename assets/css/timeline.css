@@ -110,10 +110,10 @@ ol.process-chart > li > div:before {
 
 /*** MEDIA QUERIES ***/
 @media only screen and (max-width: 40em) {
-
     ol.process-chart {
         margin: 1em 0 0 0;
         padding: 1em 0 0 0;
+        flex-direction: column; /* Stack items vertically on small screens */
     }
 
     ol.process-chart > li {
