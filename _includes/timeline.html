@@ -2,7 +2,7 @@
 
 <ol class="process-chart">
   {% for item in include.items %}
-    <li>
+    <li style="background-color: {{ item.background_color }};">
       <div>
         <h2>{{ item.title }}</h2>
         {% if item.description %}
