@@ -1,0 +1,17 @@
+- title: "You submit request to Access to Services"
+  description: "Timeline estimates begin when your protocol is determined to be complete and final by our team."
+
+- title: "Regulatory Team submits to IRB and NHRO"
+  timeline: "2 weeks"
+
+- title: "IRB reviews and sends approval"
+  timeline: "4 weeks"
+
+- title: "NRI Legal Review"
+  timeline: "3 weeks"
+
+- title: "NHC HR Review"
+  timeline: "8 weeks"
+  note: "Only applies when protocol involves collecting survey or interview responses from NHC employees"
+
+- title: "NRI Approval"
