@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <!-- JavaScript for Expand/Collapse Functionality -->
+    <!-- JavaScript for Slide-Open Animation -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
           const primaryItems = document.querySelectorAll(".process-chart > li.primary-item");
@@ -31,7 +31,19 @@
 
                   // Toggle the visibility of secondary items
                   secondaryItems.forEach((secondaryItem) => {
-                      secondaryItem.style.display = primaryItem.classList.contains("expanded") ? "block" : "none";
+                      if (primaryItem.classList.contains("expanded")) {
+                          secondaryItem.style.display = "block";
+                          setTimeout(() => {
+                              secondaryItem.style.opacity = "1";
+                              secondaryItem.style.transform = "translateY(0)";
+                          }, 10); // Small delay to trigger the transition
+                      } else {
+                          secondaryItem.style.opacity = "0";
+                          secondaryItem.style.transform = "translateY(-10px)";
+                          setTimeout(() => {
+                              secondaryItem.style.display = "none";
+                          }, 300); // Match the duration of the transition
+                      }
                   });
               });
           });

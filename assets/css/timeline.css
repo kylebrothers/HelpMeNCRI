@@ -119,23 +119,25 @@ ol.process-chart > li > div:before {
 /* Hide secondary items by default */
 ol.process-chart > li.secondary-item {
     display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* Animation for expanding/collapsing */
 ol.process-chart > li.primary-item.expanded + li.secondary-item {
     display: block;
-    animation: fadeIn 0.3s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Add padding to primary items when expanded to create space for secondary items */
+ol.process-chart > li.primary-item {
+    transition: padding-bottom 0.3s ease-in-out;
+}
+
+ol.process-chart > li.primary-item.expanded {
+    padding-bottom: 2em; /* Adjust this value based on the height of secondary items */
 }
 
 /*** MEDIA QUERIES ***/
@@ -175,5 +177,18 @@ ol.process-chart > li.primary-item.expanded + li.secondary-item {
 
     ol.process-chart > li > div {
         padding: 1em 1em 0 1em;
+    }
+
+    /* Vertical layout adjustments for slide-open animation */
+    ol.process-chart > li.primary-item.expanded {
+        padding-bottom: 2em; /* Adjust for vertical layout */
+    }
+
+    ol.process-chart > li.secondary-item {
+        transform: translateY(-10px); /* Reset transform for vertical layout */
+    }
+
+    ol.process-chart > li.primary-item.expanded + li.secondary-item {
+        transform: translateY(0); /* Reset transform for vertical layout */
     }
 }
