@@ -90,6 +90,7 @@ ol.process-chart > li:before {
     transform-origin: 25% 50%;
 }
 
+/* :after element for primary and secondary items */
 ol.process-chart > li:after {
     border-bottom: 1em solid transparent;
     border-left: 1em solid var(--bg-color); /* Use the background color */
@@ -120,15 +121,14 @@ ol.process-chart > li > div:before {
 ol.process-chart > li.secondary-item {
     display: none;
     opacity: 0;
-    transform: translateY(-10px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Animation for expanding/collapsing */
+/* Animation for expanding/collapsing (horizontal layout) */
 ol.process-chart > li.primary-item.expanded + li.secondary-item {
     display: block;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 /* Add padding to primary items when expanded to create space for secondary items */

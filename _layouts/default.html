@@ -29,17 +29,20 @@
                       `.process-chart > li.secondary-item[data-parent-index="${parentIndex}"]`
                   );
 
+                  // Check if the layout is vertical (small screen)
+                  const isVertical = window.matchMedia("(max-width: 40em)").matches;
+
                   // Toggle the visibility of secondary items
                   secondaryItems.forEach((secondaryItem) => {
                       if (primaryItem.classList.contains("expanded")) {
                           secondaryItem.style.display = "block";
                           setTimeout(() => {
                               secondaryItem.style.opacity = "1";
-                              secondaryItem.style.transform = "translateY(0)";
+                              secondaryItem.style.transform = isVertical ? "translateY(0)" : "translateX(0)";
                           }, 10); // Small delay to trigger the transition
                       } else {
                           secondaryItem.style.opacity = "0";
-                          secondaryItem.style.transform = "translateY(-10px)";
+                          secondaryItem.style.transform = isVertical ? "translateY(-10px)" : "translateX(-10px)";
                           setTimeout(() => {
                               secondaryItem.style.display = "none";
                           }, 300); // Match the duration of the transition
