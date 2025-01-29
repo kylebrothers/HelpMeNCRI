@@ -98,7 +98,7 @@ ol.process-chart > li:after {
     width: 0;
     height: 0;
     border: 1em solid transparent;
-    border-left-color: inherit; /* Inherit the background color */
+    border-left-color: var(--bg-color); /* Use the background color */
     z-index: 1;
     box-shadow: -1px 0 0 0 var(--bg-color); /* Cover the horizontal gap */
 }
@@ -136,7 +136,7 @@ ol.process-chart > li > div:before {
 
     ol.process-chart > li:after {
         border-left-color: transparent !important;
-        border-top-color: inherit; /* Inherit the background color */
+        border-top-color: var(--bg-color); /* Use the background color */
         bottom: -1em;
         left: 0;
         right: inherit;
