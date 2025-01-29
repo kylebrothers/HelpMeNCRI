@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500|Raleway:400,700,400italic,700italic);
 
+:root {
+    --primary-color: #000000;
+    --secondary-color: rgba(0, 0, 0, 0.75);
+    --background-color: #ffffff;
+}
+
 *,
 :before,
 :after {
@@ -7,8 +13,8 @@
 }
 
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--background-color);
+    color: var(--primary-color);
     font: 16px/1.25 'Raleway', sans-serif;
 }
 
@@ -39,15 +45,16 @@ ol {
     margin: 1em 0;
 }
 
+/* Process Chart Styles */
 ol.process-chart {
-    color: #000;
+    color: var(--primary-color);
     counter-reset: item;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin: 0 0 0 1em;
     padding: 0;
-    overflow: hidden; /* Added to prevent subpixel gaps */
+    overflow: hidden; /* Prevent subpixel gaps */
 }
 
 ol.process-chart > li,
@@ -66,7 +73,7 @@ ol.process-chart > li {
 
 ol.process-chart > li:before,
 ol.process-chart > li > div:before {
-    color: rgba(0,0,0,0.75);
+    color: var(--secondary-color);
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
@@ -107,6 +114,28 @@ ol.process-chart > li > div:before {
     font-size: 3em;
     font-weight: 500;
     line-height: 1;
+}
+
+/* Hide secondary items by default */
+ol.process-chart > li.secondary-item {
+    display: none;
+}
+
+/* Animation for expanding/collapsing */
+ol.process-chart > li.primary-item.expanded + li.secondary-item {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*** MEDIA QUERIES ***/

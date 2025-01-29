@@ -12,5 +12,30 @@
         {{ content }}
       </div>
     </div>
+
+    <!-- JavaScript for Expand/Collapse Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const primaryItems = document.querySelectorAll(".process-chart > li.primary-item");
+
+          primaryItems.forEach((primaryItem) => {
+              primaryItem.addEventListener("click", function () {
+                  // Toggle the "expanded" class on the clicked primary item
+                  primaryItem.classList.toggle("expanded");
+
+                  // Find the corresponding secondary items
+                  const parentIndex = primaryItem.getAttribute("data-index");
+                  const secondaryItems = document.querySelectorAll(
+                      `.process-chart > li.secondary-item[data-parent-index="${parentIndex}"]`
+                  );
+
+                  // Toggle the visibility of secondary items
+                  secondaryItems.forEach((secondaryItem) => {
+                      secondaryItem.style.display = primaryItem.classList.contains("expanded") ? "block" : "none";
+                  });
+              });
+          });
+      });
+    </script>
   </body>
 </html>

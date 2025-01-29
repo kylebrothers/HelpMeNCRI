@@ -2,19 +2,36 @@
 
 <ol class="process-chart">
   {% for item in include.items %}
-    <li style="background-color: {{ item.background_color }}; --bg-color: {{ item.background_color }};">
-      <div>
-        <h2>{{ item.title }}</h2>
-        {% if item.description %}
-          <p>{{ item.description }}</p>
-        {% endif %}
-        {% if item.timeline %}
-          <p>Typical timeline: <strong><nobr>{{ item.timeline }}</nobr></strong></p>
-        {% endif %}
-        {% if item.note %}
-          <p>{{ item.note }}</p>
-        {% endif %}
-      </div>
-    </li>
+    {% if item.type == "primary" %}
+      <li class="primary-item" style="background-color: {{ item.background_color }}; --bg-color: {{ item.background_color }};" data-index="{{ forloop.index }}">
+        <div>
+          <h2>{{ item.title }}</h2>
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+          {% if item.timeline %}
+            <p>Typical timeline: <strong><nobr>{{ item.timeline }}</nobr></strong></p>
+          {% endif %}
+          {% if item.note %}
+            <p>{{ item.note }}</p>
+          {% endif %}
+        </div>
+      </li>
+    {% else %}
+      <li class="secondary-item" style="background-color: {{ item.background_color }}; --bg-color: {{ item.background_color }};" data-parent-index="{{ forloop.index0 }}">
+        <div>
+          <h2>{{ item.title }}</h2>
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+          {% if item.timeline %}
+            <p>Typical timeline: <strong><nobr>{{ item.timeline }}</nobr></strong></p>
+          {% endif %}
+          {% if item.note %}
+            <p>{{ item.note }}</p>
+          {% endif %}
+        </div>
+      </li>
+    {% endif %}
   {% endfor %}
 </ol>
