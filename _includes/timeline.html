@@ -2,7 +2,7 @@
 
 <ol class="process-chart">
   {% for item in include.items %}
-    <li style="background-color: {{ item.background_color }};">
+    <li style="background-color: {{ item.background_color }}; --bg-color: {{ item.background_color }};">
       <div>
         <h2>{{ item.title }}</h2>
         {% if item.description %}
@@ -15,20 +15,6 @@
           <p>{{ item.note }}</p>
         {% endif %}
       </div>
-      <style>
-        /* Horizontal orientation (larger screens) */
-        ol.process-chart > li:nth-child({{ forloop.index }}):after {
-          border-left-color: {{ item.background_color }};
-        }
-
-        /* Vertical orientation (smaller screens) */
-        @media only screen and (max-width: 40em) {
-          ol.process-chart > li:nth-child({{ forloop.index }}):after {
-            border-top-color: {{ item.background_color }};
-            box-shadow: 0 -1px 0 0 {{ item.background_color }}; /* Match the background color */
-          }
-        }
-      </style>
     </li>
   {% endfor %}
 </ol>

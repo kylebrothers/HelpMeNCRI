@@ -95,6 +95,7 @@ ol.process-chart > li:after {
     top: 0;
     width: 0;
     z-index: 1;
+    box-shadow: -1px 0 0 0; /* Fix for horizontal subpixel gap */
 }
 
 ol.process-chart > li > div {
