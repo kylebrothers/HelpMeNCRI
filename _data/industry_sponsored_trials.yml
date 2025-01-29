@@ -4,21 +4,21 @@
 
 - title: "Feasibility team reviews project and hands off for start-up"
   timeline: "14 weeks"
-  background_color: "#00A6CE"
+  background_color: "#F05476"
   type: "secondary"
 
 - title: "Budget negotiation"
   timeline: "8 weeks"
   note: "The timeline at this stage varies greatly depending on sponsor responsiveness."
-  background_color: "#F7971E"
-  type: "primary"
+  background_color: "#F58FA6"
+  type: "secondary"
 
 - title: "NRI Legal Review"
   timeline: "8 weeks"
   note: "The timeline at this stage varies greatly depending on sponsor responsiveness."
   background_color: "#006dcc"
-  type: "secondary"
+  type: "primary"
 
 - title: "NRI Approval"
-  background_color: "#FDC800"
-  type: "primary"
+  background_color: "#3399E0"
+  type: "secondary"
