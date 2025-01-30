@@ -78,8 +78,9 @@ ol.process-chart > li > div:before {
     text-transform: uppercase;
 }
 
-ol.process-chart > li:before {
-    content: 'Step';
+/* Step numbering for primary items only */
+ol.process-chart > li.primary-item:before {
+    content: 'Step ' counter(item, decimal-leading-zero);
     display: inline-block;
     font-weight: 300;
     left: 2em;
@@ -110,13 +111,6 @@ ol.process-chart > li > div {
     padding: 0 0 0 1em;
 }
 
-ol.process-chart > li > div:before {
-    content: counter(item, decimal-leading-zero);
-    font-size: 3em;
-    font-weight: 500;
-    line-height: 1;
-}
-
 /* Hide secondary items by default */
 ol.process-chart > li.secondary-item {
     display: none;
@@ -125,7 +119,7 @@ ol.process-chart > li.secondary-item {
 }
 
 /* Animation for expanding/collapsing (horizontal layout) */
-ol.process-chart > li.primary-item.expanded + li.secondary-item {
+ol.process-chart > li.primary-item.expanded ~ li.secondary-item[data-parent-index] {
     display: block;
     opacity: 1;
     transform: translateX(0);
@@ -188,7 +182,7 @@ ol.process-chart > li.primary-item.expanded {
         transform: translateY(-10px); /* Reset transform for vertical layout */
     }
 
-    ol.process-chart > li.primary-item.expanded + li.secondary-item {
+    ol.process-chart > li.primary-item.expanded ~ li.secondary-item[data-parent-index] {
         transform: translateY(0); /* Reset transform for vertical layout */
     }
 }
