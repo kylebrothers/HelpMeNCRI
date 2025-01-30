@@ -71,16 +71,9 @@ ol.process-chart > li {
     padding: 1em 1em 1em 2em;
 }
 
-ol.process-chart > li:before,
-ol.process-chart > li > div:before {
-    color: var(--secondary-color);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-}
-
 /* Step numbering for primary items only */
 ol.process-chart > li.primary-item:before {
-    content: 'Step ' counter(item, decimal-leading-zero);
+    content: 'Step';
     display: inline-block;
     font-weight: 300;
     left: 2em;
@@ -89,6 +82,17 @@ ol.process-chart > li.primary-item:before {
     top: 1em;
     transform: rotate(90deg);
     transform-origin: 25% 50%;
+}
+
+/* Zero-led number for primary items only */
+ol.process-chart > li.primary-item > div:before {
+    content: counter(item, decimal-leading-zero);
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--secondary-color);
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
 }
 
 /* :after element for primary and secondary items */
